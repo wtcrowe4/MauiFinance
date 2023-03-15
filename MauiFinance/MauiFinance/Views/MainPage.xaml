@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+         xmlns:dxn="clr-namespace:DevExpress.Maui.Navigation;assembly=DevExpress.Maui.Navigation"
+         xmlns:local="clr-namespace:MauiFinance.Views"
+         Style="{StaticResource ShellStyle}"
+         xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+         ios:Page.UseSafeArea="true"
+        x:Class= "MauiFinance.Views.MainPage">
+    <TabBar>
+        <Tab Title="About" Icon="info">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" Route= "MauiFinance.Views.AboutPage"  />
+        </Tab>
+        <Tab Title ="Browse" Icon="browse">
+            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+        </Tab>
+        <Tab Title="DataGrid" Icon="grid">
+            <ShellContent ContentTemplate="{DataTemplate local:DataGridPage}"/>
+        </Tab>
+        <Tab Title="Charts" Icon="charts">
+            <ShellContent ContentTemplate="{DataTemplate local:ChartsPage}" />
+        </Tab>
+    </TabBar>
+    <TabBar>
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"
+                      Route= "MauiFinance.Views.LoginPage" />
+    </TabBar>
+
+</Shell>
