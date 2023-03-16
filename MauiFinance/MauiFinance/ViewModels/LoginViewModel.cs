@@ -33,7 +33,7 @@ namespace MauiFinance.ViewModels
 
         async void OnLoginClicked()
         {
-            await Navigation.NavigateToAsync<AboutViewModel>(true);
+            await Navigation.NavigateToAsync<HomeViewModel>(true);
         }
 
         bool ValidateLogin()

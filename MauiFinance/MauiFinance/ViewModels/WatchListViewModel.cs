@@ -3,9 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace MauiFinance.ViewModels
 {
-    public class DataGridViewModel : BaseViewModel
+    public class WatchListViewModel : BaseViewModel
     {
-        public DataGridViewModel()
+        public WatchListViewModel()
         {
             Title = "DataGrid";
             Items = new ObservableCollection<Item>();

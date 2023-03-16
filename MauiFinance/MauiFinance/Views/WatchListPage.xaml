@@ -4,7 +4,7 @@
              xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
              Title="{Binding Title}"
              IconImageSource="grid"
-             x:Class= "MauiFinance.Views.DataGridPage">    
+             x:Class= "MauiFinance.Views.WatchListPage">    
     <ContentPage.Content>
         <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Items}">
             <dxg:DataGridView.Columns>

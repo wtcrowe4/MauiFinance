@@ -2,12 +2,12 @@
 
 namespace MauiFinance.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class HomeViewModel : BaseViewModel
     {
-        public const string ViewName = "AboutPage";
-        public AboutViewModel()
+        public const string ViewName = "HomePage";
+        public HomeViewModel()
         {
-            Title = "About";
+            Title = "Home";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://www.devexpress.com/maui/"));
         }
 

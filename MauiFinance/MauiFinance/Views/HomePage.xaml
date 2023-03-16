@@ -11,10 +11,34 @@
              xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="true"
-             x:Class= "MauiFinance.Views.AboutPage">
+             x:Class= "MauiFinance.Views.HomePage">
+    
+    
     <ContentPage.Content>
         <Grid RowDefinitions="100,*,Auto">
             <Grid>
+                <Image Source="background" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                <StackLayout VerticalOptions="Center" Margin="0,10,0,10">
+                    <Label Text="Welcome to Maui Finance" FontFamily="Univia-Pro" FontSize="30" HorizontalOptions="Center" TextColor="{StaticResource NormalHeaderText}" />
+                    <Label Text="A place to find out all you need to know about your favorite stocks" FontFamily="Univia-Pro" FontSize="10" HorizontalOptions="Center" TextColor="{StaticResource NormalHeaderText}" />
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="2" RowDefinitions="Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
+                <Entry Placeholder="Enter a stock symbol" FontSize="12" FontFamily="Univia-Pro" TextColor="{StaticResource NormalText}" />
+                <Button Grid.Row="1" Text="Search" Style="{StaticResource PrimaryButton}" Command="{Binding OpenWebCommand}" />
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+
+
+
+
+<!--<Grid>
                 <Image Source="background" HorizontalOptions="FillAndExpand" Aspect="Fill"/>
                 <StackLayout VerticalOptions="Center" Margin="0,10,0,10">
                     <Label Text=".NET MAUI Controls" FontFamily="Univia-Pro" FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource NormalHeaderText}"/>
@@ -29,7 +53,4 @@
             <Button Grid.Row="2" Margin="25,20,25,20"
                     Text="Learn more"
                     Style="{StaticResource PrimaryButton}"
-                    Command="{Binding OpenWebCommand}"/>
-        </Grid>
-    </ContentPage.Content>
-</ContentPage>
+                    Command="{Binding OpenWebCommand}"/>-->

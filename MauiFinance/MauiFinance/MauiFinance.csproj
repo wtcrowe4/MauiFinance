@@ -36,6 +36,9 @@
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
+		
+		<!-- Raw Starter Data -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
 
@@ -47,5 +50,21 @@
 		<PackageReference Include="DevExpress.Maui.Controls" Version="22.2.4" />
 		<PackageReference Include="DevExpress.Maui.Editors" Version="22.2.4" />
 		<TrimmableAssembly Include="DevExpress.Data.v22.2" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\Raw\GoogleStock.xml">
+			<LogicalName>GoogleStock</LogicalName>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\WatchListPage.xaml.cs">
+	    <DependentUpon>WatchListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\HomePage.xaml.cs">
+	    <DependentUpon>HomePage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 </Project>

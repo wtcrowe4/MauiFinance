@@ -3,16 +3,16 @@
 namespace MauiFinance.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DataGridPage : ContentPage
+    public partial class WatchListPage : ContentPage
     {
-        public DataGridPage()
+        public WatchListPage()
         {
             InitializeComponent();
-            BindingContext = ViewModel = new DataGridViewModel();
+            BindingContext = ViewModel = new WatchListViewModel();
             ViewModel.OnAppearing();
         }
 
-        DataGridViewModel ViewModel { get; }
+        WatchListViewModel ViewModel { get; }
 
         protected override void OnAppearing()
         {
