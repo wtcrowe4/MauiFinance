@@ -9,7 +9,7 @@ namespace MauiFinance.Views
         {
             InitializeComponent();
             BindingContext = ViewModel = new ChartsViewModel();
-            ViewModel.OnAppearing();
+            //ViewModel.OnAppearing();
         }
 
         ChartsViewModel ViewModel { get; }
@@ -17,7 +17,7 @@ namespace MauiFinance.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ViewModel.OnAppearing();
+            //ViewModel.OnAppearing();
         }
     }
 }
