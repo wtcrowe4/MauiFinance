@@ -76,7 +76,7 @@ namespace MauiFinance.ViewModels
         {
             if (item == null)
                 return;
-            await Navigation.NavigateToAsync<ItemDetailViewModel>(item.Id);
+            await Navigation.NavigateToAsync<StockDetailViewModel>(item.Id);
         }
     }
 }

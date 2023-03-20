@@ -40,7 +40,7 @@ namespace MauiFinance.Services
         //    }
         //}
 
-        //Service for getting specific stock data
+        //Service for getting specific stock prices
         //public async Task<StockPrices> GetStockData(string symbol)
         //{
         //    var client = new HttpClient();
@@ -61,6 +61,27 @@ namespace MauiFinance.Services
         //        Console.WriteLine(body);
         //        //use body to fill StockPrices and return it to use in ChartViewModel/ChartPage
 
+
+        //Service for getting specific stock information
+        //public async Task<StockDetail> GetStockInfo(string symbol)
+        //{
+        //    var client = new HttpClient();
+        //    var request = new HttpRequestMessage
+        //    {
+        //        Method = HttpMethod.Get,
+        //        RequestUri = new Uri($"https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol={symbol}&region=US"),
+        //        Headers =
+        //            { 
+        //                { "X-RapidAPI-Key", RAPIDAPIKEY },
+        //                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
+        //            },
+        //    };
+        //    using (var response = await client.SendAsync(request))
+        //    {
+        //        response.EnsureSuccessStatusCode();
+        //        var body = await response.Content.ReadAsStringAsync();
+        //        Console.WriteLine(body);
+        //        //use body to fill StockDetail and return it to use in StockDetailViewModel/StockDetailPage
 
     }
 }
