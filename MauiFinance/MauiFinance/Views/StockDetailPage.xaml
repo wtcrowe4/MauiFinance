@@ -5,7 +5,7 @@
              BackgroundColor="{StaticResource NormalBackgroundColor}"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="true"
-             x:Class= "MauiFinance.Views.ItemDetailPage">
+             x:Class= "MauiFinance.Views.StockDetailPage">
     <StackLayout Spacing="5" Padding="15">
         <Label Text="Text:" FontFamily="Roboto" FontSize="12" TextColor="{StaticResource NormalLightText}"/>
         <Label Text="{Binding Text}" FontFamily="Roboto" FontSize="14" TextColor="{StaticResource NormalText}" Margin="0, 0, 0, 15"/>
