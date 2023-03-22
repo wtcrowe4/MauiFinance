@@ -2,7 +2,7 @@
 
 namespace MauiFinance.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel, IQueryAttributable
+    public class StockDetailViewModel : BaseViewModel, IQueryAttributable
     {
         public const string ViewName = "ItemDetailPage";
 

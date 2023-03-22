@@ -19,11 +19,14 @@
             <Grid>
                 <Image Source="background" HorizontalOptions="FillAndExpand" Aspect="Fill" />
                 <StackLayout VerticalOptions="Center" Margin="0,10,0,10">
-                    <Label Text="Welcome to Maui Finance" FontFamily="Univia-Pro" FontSize="30" HorizontalOptions="Center" TextColor="{StaticResource NormalHeaderText}" />
-                    <Label Text="A place to find out all you need to know about your favorite stocks" FontFamily="Univia-Pro" FontSize="10" HorizontalOptions="Center" TextColor="{StaticResource NormalHeaderText}" />
+                    <Label Text="Welcome to Maui Finance" FontFamily="Univia-Pro" FontSize="40" HorizontalOptions="Center" TextColor="{StaticResource NormalHeaderText}" />
+                    
                 </StackLayout>
             </Grid>
             <Grid Grid.Row="2" RowDefinitions="Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
+                <Label Text="Find out all you need to know about your favorite stocks." />
+            </Grid>
+            <Grid Grid.Row="3" RowDefinitions="Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
                 <Entry Placeholder="Enter a stock symbol" FontSize="12" FontFamily="Univia-Pro" TextColor="{StaticResource NormalText}" />
                 <Button Grid.Row="1" Text="Search" Style="{StaticResource PrimaryButton}" Command="{Binding OpenWebCommand}" />
             </Grid>
