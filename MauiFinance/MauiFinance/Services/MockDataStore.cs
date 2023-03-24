@@ -11,10 +11,15 @@ namespace MauiFinance.Services
             DateTime baseDate = DateTime.Today;
             this.stocks = new List<Stock>()
             {
-                new Stock {Id = 1, Name = "Google", Symbol = "GOGL", Industry = "Technology" }
+                new Stock {Id = 1, Name = "Google", Symbol = "GOGL", Industry = "Technology" },
+                new Stock {Id = 2, Name = "Apple", Symbol = "APPL", Industry = "Technology" },
+                new Stock {Id = 3, Name = "Microsoft", Symbol = "MSFT", Industry = "Technology" },
+                new Stock {Id = 4, Name = "Amazon", Symbol = "AMZN", Industry = "Technology" },
+                new Stock {Id = 5, Name = "Facebook", Symbol = "FB", Industry = "Technology" },
+                new Stock {Id = 6, Name = "Tesla", Symbol = "TSLA", Industry = "Technology" },
+                new Stock {Id = 7, Name = "Netflix", Symbol = "NFLX", Industry = "Technology" },
                 
-
-
+              
             };
         //    new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description.", StartTime = baseDate.AddHours(1), EndTime = baseDate.AddHours(2), Value=17.098 },
         //    new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description.", StartTime = baseDate.AddHours(2), EndTime = baseDate.AddHours(4), Value=9.985 },
@@ -26,19 +31,33 @@ namespace MauiFinance.Services
 
         }
 
-        public async Task<bool> AddItemAsync(Item item)
-        {
-            this.items.Add(item);
+        //public async Task<bool> AddItemAsync(Item item)
+        //{
+        //    this.items.Add(item);
 
+        //    return await Task.FromResult(true);
+        //}
+
+        public async Task<bool> AddStockAsync(Stock stock)
+        {
+            this.stocks.Add(stock);
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
-        {
-            var oldItem = this.items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            this.items.Remove(oldItem);
-            this.items.Add(item);
+        //public async Task<bool> UpdateItemAsync(Item item)
+        //{
+        //    var oldItem = this.items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+        //    this.items.Remove(oldItem);
+        //    this.items.Add(item);
 
+        //    return await Task.FromResult(true);
+        //}
+
+        public async Task<bool> UpdateStockAsync(Stock stock)
+        {
+            var oldItem = this.stocks.Where((Stock arg) => arg.Id == stock.Id).FirstOrDefault();
+            this.stocks.Remove(oldItem);
+            this.stocks.Add(stock);
             return await Task.FromResult(true);
         }
 
