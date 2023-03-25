@@ -1,5 +1,6 @@
 ﻿using MauiFinance.Models;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace MauiFinance.ViewModels
 {
@@ -7,19 +8,21 @@ namespace MauiFinance.ViewModels
     {
         public WatchListViewModel()
         {
-            Title = "DataGrid";
-            Items = new ObservableCollection<Item>();
+            Title = "Watchlist";
+            Stocks = new ObservableCollection<Stock>();
         }
 
-        public ObservableCollection<Item> Items { get; private set; }
+        public ObservableCollection<Stock> Stocks { get; private set; }
 
         async public void OnAppearing()
         {
-            IEnumerable<Item> items = await DataStore.GetItemsAsync(true);
-            Items.Clear();
-            foreach (Item item in items)
+            IEnumerable<Stock> stocks = await DataStore.GetItemsAsync(true);
+
+            Stocks.Clear();
+            foreach (Stock stock in stocks)
             {
-                Items.Add(item);
+                Stocks.Add(stock);
+                Debug.WriteLine(stock.Symbol);
             }
         }
     }

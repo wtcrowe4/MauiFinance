@@ -12,7 +12,7 @@ namespace MauiFinance.ViewModels
         string title = string.Empty;
 
 
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Stock> DataStore => DependencyService.Get<IDataStore<Stock>>();
 
         public INavigationService Navigation => DependencyService.Get<INavigationService>();
 

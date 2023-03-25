@@ -2,9 +2,9 @@
 {
     public interface IDataStore<T>
     {
-        Task<bool> AddItemAsync(T item);
+        Task<bool> AddItemAsync(T stock);
 
-        Task<bool> UpdateItemAsync(T item);
+        Task<bool> UpdateItemAsync(T stock);
 
         Task<bool> DeleteItemAsync(string id);
 

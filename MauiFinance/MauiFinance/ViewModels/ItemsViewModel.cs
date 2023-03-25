@@ -6,6 +6,7 @@ namespace MauiFinance.ViewModels
     public class ItemsViewModel : BaseViewModel
     {
         Item _selectedItem;
+        Stock _selectedStock;
 
 
         public ItemsViewModel()
@@ -54,7 +55,7 @@ namespace MauiFinance.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    //Items.Add(item);
                 }
             }
             catch (Exception ex)

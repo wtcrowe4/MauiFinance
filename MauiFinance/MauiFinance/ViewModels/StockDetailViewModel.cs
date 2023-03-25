@@ -6,16 +6,17 @@ namespace MauiFinance.ViewModels
     {
         public const string ViewName = "ItemDetailPage";
 
-        string text;
+        string name;
+        string symbol;
         string description;
 
 
         public string Id { get; set; }
 
-        public string Text
+        public string Name
         {
-            get => this.text;
-            set => SetProperty(ref this.text, value);
+            get => this.Name;
+            set => SetProperty(ref this.name, value);
         }
 
         public string Description
@@ -24,14 +25,14 @@ namespace MauiFinance.ViewModels
             set => SetProperty(ref this.description, value);
         }
 
-        public async Task LoadItemId(string itemId)
+        public async Task LoadItemId(string stockId)
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
-                Id = item.Id;
-                Text = item.Text;
-                Description = item.Description;
+                var stock = await DataStore.GetItemAsync(stockId);
+                Id = stock.Id;
+                Name = stock.Name;
+                Description = stock.Summary;
             }
             catch (Exception)
             {

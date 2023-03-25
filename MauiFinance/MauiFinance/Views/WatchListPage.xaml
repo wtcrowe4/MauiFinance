@@ -11,11 +11,11 @@
     </ContentPage.ToolbarItems>-->
     
     <ContentPage.Content>
-        <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Items}">
+        <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Stocks}">
             <dxg:DataGridView.Columns>
-                <dxg:TextColumn FieldName="Text" Caption="Text" />
-                <dxg:TextColumn FieldName="Description" Caption="Description" />
-                <dxg:DateColumn FieldName="StartTime" Caption="Time" DisplayFormat="h:mm tt" />
+                <dxg:TextColumn FieldName="Name" Caption="Name" />
+                <dxg:TextColumn FieldName="Symbol" Caption="Symbol" />
+                <dxg:DateColumn FieldName="Industry" Caption="Industry" />
             </dxg:DataGridView.Columns>
         </dxg:DataGridView>
     </ContentPage.Content>

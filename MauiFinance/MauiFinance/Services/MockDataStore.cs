@@ -11,13 +11,13 @@ namespace MauiFinance.Services
             DateTime baseDate = DateTime.Today;
             this.stocks = new List<Stock>()
             {
-                new Stock {Id = 1, Name = "Google", Symbol = "GOGL", Industry = "Technology" },
-                new Stock {Id = 2, Name = "Apple", Symbol = "APPL", Industry = "Technology" },
-                new Stock {Id = 3, Name = "Microsoft", Symbol = "MSFT", Industry = "Technology" },
-                new Stock {Id = 4, Name = "Amazon", Symbol = "AMZN", Industry = "Technology" },
-                new Stock {Id = 5, Name = "Facebook", Symbol = "FB", Industry = "Technology" },
-                new Stock {Id = 6, Name = "Tesla", Symbol = "TSLA", Industry = "Technology" },
-                new Stock {Id = 7, Name = "Netflix", Symbol = "NFLX", Industry = "Technology" },
+                new Stock {Id = "1", Name = "Google", Symbol = "GOGL", Industry = "Technology" },
+                new Stock {Id = "2", Name = "Apple", Symbol = "APPL", Industry = "Technology" },
+                new Stock {Id = "3", Name = "Microsoft", Symbol = "MSFT", Industry = "Technology" },
+                new Stock {Id = "4", Name = "Amazon", Symbol = "AMZN", Industry = "Technology" },
+                new Stock {Id = "5", Name = "Facebook", Symbol = "FB", Industry = "Technology" },
+                new Stock {Id = "6", Name = "Tesla", Symbol = "TSLA", Industry = "Technology" },
+                new Stock {Id = "7", Name = "Netflix", Symbol = "NFLX", Industry = "Technology" },
                 
               
             };
@@ -38,7 +38,7 @@ namespace MauiFinance.Services
         //    return await Task.FromResult(true);
         //}
 
-        public async Task<bool> AddStockAsync(Stock stock)
+        public async Task<bool> AddItemAsync(Stock stock)
         {
             this.stocks.Add(stock);
             return await Task.FromResult(true);
@@ -53,7 +53,7 @@ namespace MauiFinance.Services
         //    return await Task.FromResult(true);
         //}
 
-        public async Task<bool> UpdateStockAsync(Stock stock)
+        public async Task<bool> UpdateItemAsync(Stock stock)
         {
             var oldItem = this.stocks.Where((Stock arg) => arg.Id == stock.Id).FirstOrDefault();
             this.stocks.Remove(oldItem);
@@ -61,22 +61,39 @@ namespace MauiFinance.Services
             return await Task.FromResult(true);
         }
 
+        //public async Task<bool> DeleteItemAsync(string id)
+        //{
+        //    var oldItem = this.items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+        //    this.items.Remove(oldItem);
+
+        //    return await Task.FromResult(true);
+        //}
+
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = this.items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            this.items.Remove(oldItem);
-
+            var oldItem = this.stocks.Where((Stock arg) => arg.Id == id).FirstOrDefault();
+            this.stocks.Remove(oldItem);
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        //public async Task<Item> GetItemAsync(string id)
+        //{
+        //    return await Task.FromResult(this.items.FirstOrDefault(s => s.Id == id));
+        //}
+
+        public async Task<Stock> GetItemAsync(string id)
         {
-            return await Task.FromResult(this.items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(this.stocks.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        //public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        //{
+        //    return await Task.FromResult(this.items);
+        //}
+
+        public async Task<IEnumerable<Stock>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(this.items);
+            return await Task.FromResult(this.stocks);
         }
     }
 }

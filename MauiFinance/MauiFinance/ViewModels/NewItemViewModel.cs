@@ -60,7 +60,7 @@ namespace MauiFinance.ViewModels
                 Description = Description
             };
 
-            await DataStore.AddItemAsync(newItem);
+            //await DataStore.AddItemAsync(newItem);
 
             // This will pop the current page off the navigation stack
             await Navigation.GoBackAsync();

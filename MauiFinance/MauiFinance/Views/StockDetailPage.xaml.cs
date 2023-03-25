@@ -7,7 +7,7 @@ namespace MauiFinance.Views
     {
         public ItemDetailPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
             BindingContext = new StockDetailViewModel();
         }
     }
