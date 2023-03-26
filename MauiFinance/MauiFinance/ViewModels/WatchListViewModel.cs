@@ -22,7 +22,6 @@ namespace MauiFinance.ViewModels
             foreach (Stock stock in stocks)
             {
                 Stocks.Add(stock);
-                Debug.WriteLine(stock.Symbol);
             }
         }
     }
