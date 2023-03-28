@@ -15,7 +15,8 @@
             <dxg:DataGridView.Columns>
                 <dxg:TextColumn FieldName="Name" Caption="Name" />
                 <dxg:TextColumn FieldName="Symbol" Caption="Symbol" />
-                <dxg:DateColumn FieldName="Industry" Caption="Industry" />
+                <dxg:TextColumn FieldName="Industry" Caption="Industry" />
+                <dxg:TextColumn FieldName="ProfitMargin" Caption="Profit Margin" />
             </dxg:DataGridView.Columns>
         </dxg:DataGridView>
     </ContentPage.Content>

@@ -11,13 +11,13 @@ namespace MauiFinance.Services
             DateTime baseDate = DateTime.Today;
             this.stocks = new List<Stock>()
             {
-                new Stock {Id = "1", Name = "Google", Symbol = "GOGL", Industry = "Technology" },
-                new Stock {Id = "2", Name = "Apple", Symbol = "APPL", Industry = "Technology" },
-                new Stock {Id = "3", Name = "Microsoft", Symbol = "MSFT", Industry = "Technology" },
-                new Stock {Id = "4", Name = "Amazon", Symbol = "AMZN", Industry = "Technology" },
-                new Stock {Id = "5", Name = "Facebook", Symbol = "FB", Industry = "Technology" },
-                new Stock {Id = "6", Name = "Tesla", Symbol = "TSLA", Industry = "Technology" },
-                new Stock {Id = "7", Name = "Netflix", Symbol = "NFLX", Industry = "Technology" },
+                new Stock {Id = "1", Name = "Google", Symbol = "GOGL", Industry = "Technology", ProfitMargin = "+25"},
+                new Stock {Id = "2", Name = "Apple", Symbol = "APPL", Industry = "Technology", ProfitMargin = "+15"},
+                new Stock {Id = "3", Name = "Microsoft", Symbol = "MSFT", Industry = "Technology", ProfitMargin = "+67" },
+                new Stock {Id = "4", Name = "Amazon", Symbol = "AMZN", Industry = "Technology", ProfitMargin = "+45" },
+                new Stock {Id = "5", Name = "Facebook", Symbol = "FB", Industry = "Technology", ProfitMargin = "-25" },
+                new Stock {Id = "6", Name = "Tesla", Symbol = "TSLA", Industry = "Technology", ProfitMargin = "80" },
+                new Stock {Id = "7", Name = "Netflix", Symbol = "NFLX", Industry = "Technology", ProfitMargin = "+52" },
                 
               
             };

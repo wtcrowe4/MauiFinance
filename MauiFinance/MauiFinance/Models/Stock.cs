@@ -9,6 +9,7 @@ namespace MauiFinance.Models
         public string Name { get; set; }
         public string Symbol { get; set; }
         public StockPrices stockPrices { get; set; }
+        public int Delta { get; set; }
         public string ProfitMargin { get; set; }
         public string Sector { get; set; }
         public string Industry { get; set; }
