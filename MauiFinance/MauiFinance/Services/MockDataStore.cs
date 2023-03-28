@@ -11,13 +11,13 @@ namespace MauiFinance.Services
             DateTime baseDate = DateTime.Today;
             this.stocks = new List<Stock>()
             {
-                new Stock {Id = "1", Name = "Google", Symbol = "GOGL", Industry = "Technology", ProfitMargin = "+25"},
-                new Stock {Id = "2", Name = "Apple", Symbol = "APPL", Industry = "Technology", ProfitMargin = "+15"},
-                new Stock {Id = "3", Name = "Microsoft", Symbol = "MSFT", Industry = "Technology", ProfitMargin = "+67" },
-                new Stock {Id = "4", Name = "Amazon", Symbol = "AMZN", Industry = "Technology", ProfitMargin = "+45" },
-                new Stock {Id = "5", Name = "Facebook", Symbol = "FB", Industry = "Technology", ProfitMargin = "-25" },
-                new Stock {Id = "6", Name = "Tesla", Symbol = "TSLA", Industry = "Technology", ProfitMargin = "80" },
-                new Stock {Id = "7", Name = "Netflix", Symbol = "NFLX", Industry = "Technology", ProfitMargin = "+52" },
+                new Stock {Id = "1", Name = "Google", Symbol = "GOGL", Industry = "Technology", ProfitMargin = "+25", Delta = 2.7},
+                new Stock {Id = "2", Name = "Apple", Symbol = "APPL", Industry = "Technology", ProfitMargin = "+15", Delta = -.3},
+                new Stock {Id = "3", Name = "Microsoft", Symbol = "MSFT", Industry = "Technology", ProfitMargin = "+67", Delta = 1.2 },
+                new Stock {Id = "4", Name = "Amazon", Symbol = "AMZN", Industry = "Technology", ProfitMargin = "+45", Delta = -.7 },
+                new Stock {Id = "5", Name = "Facebook", Symbol = "FB", Industry = "Technology", ProfitMargin = "-25", Delta = 1.9 },
+                new Stock {Id = "6", Name = "Tesla", Symbol = "TSLA", Industry = "Technology", ProfitMargin = "80", Delta = 3.3 },
+                new Stock {Id = "7", Name = "Netflix", Symbol = "NFLX", Industry = "Technology", ProfitMargin = "+52", Delta = -1.8},
                 
               
             };
