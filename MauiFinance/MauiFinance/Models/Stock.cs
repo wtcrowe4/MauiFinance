@@ -13,6 +13,8 @@ namespace MauiFinance.Models
         public string ProfitMargin { get; set; }
         public string Sector { get; set; }
         public string Industry { get; set; }
+        public string Founded { get; set; }
+        public string Employees { get; set; }
         public string Location { get; set; }
         public string Website { get; set; }
         public string Summary { get; set; }
