@@ -83,8 +83,8 @@ namespace MauiFinance.Services
         //        Console.WriteLine(body);
         //        //use body to fill StockDetail and return it to use in StockDetailViewModel/StockDetailPage
 
-        //Service for getting best stocks for the day
-        //public async Task<Stock> GetBestStocks()
+        //Service for getting top performing stocks
+        //public async Task<Stock> GetTopStocks()
         //{
         //    var client = new HttpClient();
         //    var request = new HttpRequestMessage
