@@ -31,4 +31,9 @@ namespace MauiFinance.Models
         public double Volume { get; set; }
     }
 
+    public class TopPerformers
+    {
+        public List<Stock> Stocks { get; set; } = new List<Stock>();    
+    }
+
 }
