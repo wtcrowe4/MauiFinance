@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid" 
+             Title="{Binding Title}"
+             IconImageSource="grid"
              x:Class="MauiFinance.Views.TopPerformersPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Top Performers"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Stocks}">
+            <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Symbol" Caption="Symbol" />
+                <dxg:NumberColumn FieldName="ProfitMargin" Caption="Profit Margin" />
+                <dxg:NumberColumn FieldName="Delta" Caption="Today(%)" />
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
     </ContentPage.Content>
 </ContentPage>
