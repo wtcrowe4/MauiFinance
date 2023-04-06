@@ -8,6 +8,7 @@
     <ContentPage.Content>
         <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Stocks}">
             <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Name" Caption="Name" />
                 <dxg:TextColumn FieldName="Symbol" Caption="Symbol" />
                 <dxg:NumberColumn FieldName="ProfitMargin" Caption="Profit Margin" />
                 <dxg:NumberColumn FieldName="Delta" Caption="Today(%)" />
