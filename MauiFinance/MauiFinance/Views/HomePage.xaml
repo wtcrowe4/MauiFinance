@@ -26,10 +26,16 @@
             <Grid Grid.Row="2" RowDefinitions="Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
                 
             </Grid>
+
             <Grid Grid.Row="3" RowDefinitions="Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
+                <Button Grid.Row="1" Text="Today's Top Stocks" Style="{StaticResource PrimaryButton}" Command="{Binding GetTopStocks}" />
+            </Grid>
+            
+            <Grid Grid.Row="4" RowDefinitions="Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
                 <Entry Placeholder="Enter a stock symbol" FontSize="12" FontFamily="Univia-Pro" TextColor="{StaticResource NormalText}" />
                 <Button Grid.Row="1" Text="Search" Style="{StaticResource PrimaryButton}" Command="{Binding OpenWebCommand}" />
             </Grid>
+            
 
         </Grid>
     </ContentPage.Content>

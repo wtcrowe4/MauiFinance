@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using MauiFinance.Services;
+using System.Windows.Input;
 
 namespace MauiFinance.ViewModels
 {
@@ -9,6 +10,7 @@ namespace MauiFinance.ViewModels
         {
             Title = "Home";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://www.devexpress.com/maui/"));
+            //GetTopStocksCommand = new Command(async () => await StockDataService.GetTopStocks());
         }
 
         public ICommand OpenWebCommand { get; }
