@@ -10,9 +10,10 @@ namespace MauiFinance.ViewModels
         {
             Title = "Home";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://www.devexpress.com/maui/"));
-            //GetTopStocksCommand = new Command(async () => await StockDataService.GetTopStocks());
+            GetTopStocksCommand = new Command(async () => await StockDataService.GetTopStocks());
         }
 
         public ICommand OpenWebCommand { get; }
+        public ICommand GetTopStocksCommand { get; }
     }
 }

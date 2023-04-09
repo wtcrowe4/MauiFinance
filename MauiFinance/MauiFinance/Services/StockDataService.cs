@@ -8,6 +8,8 @@ namespace MauiFinance.Services
     public class StockDataService
     {
         HttpClient _httpClient;
+        private List<Stock> top_stocks;
+
         public StockDataService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -84,47 +86,51 @@ namespace MauiFinance.Services
         //        //use body to fill StockDetail and return it to use in StockDetailViewModel/StockDetailPage
 
         //Service for getting top performing stocks
-        //public async Task<Stock> GetTopStocks()
-        //{
-        //    var client = new HttpClient();
-        //    var request = new HttpRequestMessage
-        //    {
-        //        Method = HttpMethod.Get,
-        //        RequestUri = new Uri("https://yh-finance.p.rapidapi.com/stock/v2/get-movers?region=US&lang=en-US"),
-        //        Headers =
-        //            {
-        //                { "X-RapidAPI-Key", RAPIDAPIKEY },
-        //                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },   
-        //            },
-        //    };
-        //    using (var response = await client.SendAsync(request))
-        //    {
-        //        response.EnsureSuccessStatusCode();
-        //        var body = await response.Content.ReadAsStringAsync();
-        //        Console.WriteLine(body);
-        //        //use body to fill Stock models and return it here to list in view
-        
-        //Service for getting watchlist stocks
-        //public async Task<Stock> GetWatchlistStocks()
-        //{
-        //    var client = new HttpClient();
-        //    var request = new HttpRequestMessage
-        //    {
-        //        Method = HttpMethod.Get,
-        //        RequestUri = new Uri("https://yh-finance.p.rapidapi.com/stock/v2/get-movers?region=US&lang=en-US"),
-        //        Headers =
-        //            {
-        //                { "X-RapidAPI-Key", RAPIDAPIKEY },
-        //                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
-        //            },
-        //    };
-        //    using (var response = await client.SendAsync(request))
-        //    {
-        //        response.EnsureSuccessStatusCode();
-        //        var body = await response.Content.ReadAsStringAsync();
-        //        Console.WriteLine(body);
-        //        
+        public async Task<List<Stock>> GetTopStocks()
+        {
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://yh-finance.p.rapidapi.com/stock/v2/get-movers?region=US&lang=en-US"),
+                Headers =
+                    {
+                        { "X-RapidAPI-Key", RAPIDAPIKEY },
+                        { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
+                    },
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(body);
+
+                //use body to fill Stock models and return it here to list in view
+                top_stocks = new List <Stock>();
+                return top_stocks;
+
+                //Service for getting watchlist stocks
+                //public async Task<Stock> GetWatchlistStocks()
+                //{
+                //    var client = new HttpClient();
+                //    var request = new HttpRequestMessage
+                //    {
+                //        Method = HttpMethod.Get,
+                //        RequestUri = new Uri("https://yh-finance.p.rapidapi.com/stock/v2/get-movers?region=US&lang=en-US"),
+                //        Headers =
+                //            {
+                //                { "X-RapidAPI-Key", RAPIDAPIKEY },
+                //                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
+                //            },
+                //    };
+                //    using (var response = await client.SendAsync(request))
+                //    {
+                //        response.EnsureSuccessStatusCode();
+                //        var body = await response.Content.ReadAsStringAsync();
+                //        Console.WriteLine(body);
+                //        
 
 
-    }
+            }
 }
+    }
