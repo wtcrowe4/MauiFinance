@@ -22,6 +22,7 @@
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-android'">21.0</SupportedOSPlatformVersion>
 		<UseInterpreter Condition="$(TargetFramework.Contains('-ios')) AND '$(Configuration)' == 'Release'">True</UseInterpreter>
+		<UserSecretsId>49fe8f1e-ab5b-4223-93b3-215aef98f886</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -69,6 +70,7 @@
 		<PackageReference Include="DevExpress.Maui.DataGrid" Version="22.2.4" />
 		<PackageReference Include="DevExpress.Maui.Controls" Version="22.2.4" />
 		<PackageReference Include="DevExpress.Maui.Editors" Version="22.2.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
 		<TrimmableAssembly Include="DevExpress.Data.v22.2" />
 	</ItemGroup>
 
