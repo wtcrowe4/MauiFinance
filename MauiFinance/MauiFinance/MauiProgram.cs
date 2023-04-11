@@ -24,6 +24,8 @@ namespace MauiFinance
                     fonts.AddFont("univia-pro-regular.ttf", "Univia-Pro");
                     fonts.AddFont("univia-pro-medium.ttf", "Univia-Pro Medium");
                 });
+            var RAPIDAPIKEY = builder.Configuration["STOCK_API:KEY"];
+            var RAPIDAPIHOST = builder.Configuration["STOCK_API:HOST"];
 
             return builder.Build();
         }
