@@ -1,7 +1,8 @@
 ﻿using MauiFinance.Models;
 using System.Net.Http;
 using MauiFinance.Views;
-
+using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MauiFinance.Services
 {
@@ -9,10 +10,19 @@ namespace MauiFinance.Services
     {
         HttpClient _httpClient;
         private List<Stock> top_stocks;
+        private readonly IConfiguration _config;
 
-        public StockDataService(HttpClient httpClient)
+        
+
+        public StockDataService(HttpClient httpClient, IConfiguration config)
         {
             _httpClient = httpClient;
+            _config = config;
+            var RAPIDAPIKEY = config["STOCK_API:KEY"];
+            var RAPIDAPIHOST = config["STOCK_API:HOST"];
+        
+
+        
         }
 
 
@@ -86,9 +96,11 @@ namespace MauiFinance.Services
         //        //use body to fill StockDetail and return it to use in StockDetailViewModel/StockDetailPage
 
         //Service for getting top performing stocks
-        public async Task<List<Stock>> GetTopStocks()
+        public async Task<List<Stock>> GetTopStocks(IConfiguration config)
         {
             var client = new HttpClient();
+            var RAPIDAPIKEY = config["STOCK_API:KEY"];
+            var RAPIDAPIHOST = config["STOCK_API:HOST"];
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
