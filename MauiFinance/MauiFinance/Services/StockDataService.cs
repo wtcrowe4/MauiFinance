@@ -18,8 +18,8 @@ namespace MauiFinance.Services
         {
             _httpClient = httpClient;
             _config = config;
-            var RAPIDAPIKEY = config["STOCK_API:KEY"];
-            var RAPIDAPIHOST = config["STOCK_API:HOST"];
+            //var RAPIDAPIKEY = config["STOCK_API:KEY"];
+            //var RAPIDAPIHOST = config["STOCK_API:HOST"];
         
 
         

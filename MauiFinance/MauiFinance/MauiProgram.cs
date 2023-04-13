@@ -5,6 +5,7 @@ using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 
+
 namespace MauiFinance
 {
     public static class MauiProgram
@@ -24,14 +25,7 @@ namespace MauiFinance
                     fonts.AddFont("univia-pro-regular.ttf", "Univia-Pro");
                     fonts.AddFont("univia-pro-medium.ttf", "Univia-Pro Medium");
                 });
-            //var RAPIDAPIKEY = builder.Configuration["STOCK_API:KEY"];
-            //var RAPIDAPIHOST = builder.Configuration["STOCK_API:HOST"];
-            //builder.Services.AddHttpClient("StockDataService", client =>
-            //{
-            //    client.BaseAddress = new System.Uri("https://yh-finance.p.rapidapi.com/");
-            //    client.DefaultRequestHeaders.Add("X-RapidAPI-Key", RAPIDAPIKEY);
-            //    client.DefaultRequestHeaders.Add("X-RapidAPI-Host", RAPIDAPIHOST);
-            //});
+           
 
             return builder.Build();
         }
