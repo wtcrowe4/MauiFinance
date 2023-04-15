@@ -17,11 +17,6 @@ namespace MauiFinance.Services
         {
             _httpClient = httpClient;
             _config = config;
-
-
-
-
-
         }
         public async Task<List<Stock>> GetTopStocks(IConfiguration config)
         {
