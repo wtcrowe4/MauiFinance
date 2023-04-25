@@ -70,6 +70,32 @@ namespace MauiFinance.Services
             
         }
 
+        public async Task<Stock> GetStockInfo(string symbol, IConfiguration config)
+        {
+            string RapidApiKey = config["STOCK_API:KEY"];
+            string RapidApiHost = config["STOCK_API:HOST"];
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri($"https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol={symbol}&region=US"),
+                Headers =
+                {
+                    { "X-RapidAPI-Key", RapidApiKey },
+                    { "X-RapidAPI-Host", RapidApiHost }
+                }
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(body);
+                //convert body into a Stock to return
+                //return body;
+
+            }
+        }
+
 
 
     }
