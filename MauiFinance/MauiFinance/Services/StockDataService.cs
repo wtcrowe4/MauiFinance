@@ -3,6 +3,7 @@ using System.Net.Http;
 using MauiFinance.Views;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography.X509Certificates;
+using System.Linq.Expressions;
 
 namespace MauiFinance.Services
 {
@@ -92,6 +93,37 @@ namespace MauiFinance.Services
                 Console.WriteLine(body);
                 //convert body into a Stock to return
                 //return body;
+
+            }
+        }
+
+
+        public async Task<List<Stock>> GetWatchList(List<string> symbols, IConfiguration config)
+        {
+            string RapidApiKey = config["STOCK_API:KEY"];
+            string RapidApiHost = config["STOCK_API:HOST"];
+            var client = new HttpClient();
+            foreach (var symbol in symbols)
+            {
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri($"https://yh-finance.p.rapidapi.com/auto-complete?q={symbol}&region=US")
+                    Headers =
+                    {
+                        { "X-RapidAPI-Key", RapidApiKey },
+                        { "X-RapidAPI-Host", RapidApiHost }
+
+                    }
+                };
+                using (var response = await client.SendAsync(request))
+                { 
+                    response.EnsureSuccessStatusCode();
+                    var body = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(body);
+                    return new List<Stock> { new Stock { } }
+                }
+
 
             }
         }
