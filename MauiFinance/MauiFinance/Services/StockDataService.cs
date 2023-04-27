@@ -12,7 +12,7 @@ namespace MauiFinance.Services
         HttpClient _httpClient;
         private List<Stock> top_stocks;
         private readonly IConfiguration _config;
-        
+
 
         public StockDataService(HttpClient httpClient, IConfiguration config)
         {
@@ -66,9 +66,9 @@ namespace MauiFinance.Services
                 Console.WriteLine(body);
                 //convert body into a Stock to return
                 //return body;
-                
+
             }
-            
+
         }
 
         public async Task<Stock> GetStockInfo(string symbol, IConfiguration config)
@@ -117,18 +117,44 @@ namespace MauiFinance.Services
                     }
                 };
                 using (var response = await client.SendAsync(request))
-                { 
+                {
                     response.EnsureSuccessStatusCode();
                     var body = await response.Content.ReadAsStringAsync();
                     Console.WriteLine(body);
-                    return new List<Stock> { new Stock { } }
+                    //convert body into Stocks
                 }
 
 
             }
         }
+        
 
+        public async Task<List<StockPrice>> GetStockChart(string symbol, string range, string interval, IConfiguration config)
+        {
+            string RapidApiKey = config["STOCK_API:KEY"];
+            string RapidApiHost = config["STOCK_API:HOST"];
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri($"https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval={interval}&symbol={symbol}&range={range}&region=US&includePrePost=false&useYfid=true&includeAdjustedClose=true&events=capitalGain%2Cdiv%2Csplit"),
+                Headers =
+                {
+                    { "X-RapidAPI-Key", RapidApiKey },
+                    { "X-RapidAPI-Host", RapidApiHost }
+                }
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(body);
+                //convert body into a Stock to return
+                //return body;
 
+            }
+
+        }
 
     }
 }
