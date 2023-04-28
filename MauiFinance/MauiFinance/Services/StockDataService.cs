@@ -129,7 +129,7 @@ namespace MauiFinance.Services
         }
         
 
-        public async Task<List<StockPrice>> GetStockChart(string symbol, string range, string interval, IConfiguration config)
+        public async Task<List<StockPrice>> GetStockChartData(string symbol, string range, string interval, IConfiguration config)
         {
             string RapidApiKey = config["STOCK_API:KEY"];
             string RapidApiHost = config["STOCK_API:HOST"];
@@ -158,109 +158,4 @@ namespace MauiFinance.Services
 
     }
 }
-
-
-
-
-
-
-
-
-    
-
-//Service for getting specific stock prices
-//public async Task<StockPrices> GetStockData(string symbol)
-//{
-//    var client = new HttpClient();
-//    var request = new HttpRequestMessage
-//    {
-//        Method = HttpMethod.Get,
-//        RequestUri = new Uri($"https://yh-finance.p.rapidapi.com/stock/v2/get-chart?interval=1d&symbol={symbol}&region=US"),
-//        Headers =
-//            {
-//                { "X-RapidAPI-Key", RAPIDAPIKEY },
-//                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
-//            },
-//    };
-//    using (var response = await client.SendAsync(request))
-//    {
-//        response.EnsureSuccessStatusCode();
-//        var body = await response.Content.ReadAsStringAsync();
-//        Console.WriteLine(body);
-//        //use body to fill StockPrices and return it to use in ChartViewModel/ChartPage
-
-
-//Service for getting specific stock information
-//public async Task<StockDetail> GetStockInfo(string symbol)
-//{
-//    var client = new HttpClient();
-//    var request = new HttpRequestMessage
-//    {
-//        Method = HttpMethod.Get,
-//        RequestUri = new Uri($"https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol={symbol}&region=US"),
-//        Headers =
-//            { 
-//                { "X-RapidAPI-Key", RAPIDAPIKEY },
-//                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
-//            },
-//    };
-//    using (var response = await client.SendAsync(request))
-//    {
-//        response.EnsureSuccessStatusCode();
-//        var body = await response.Content.ReadAsStringAsync();
-//        Console.WriteLine(body);
-//        //use body to fill StockDetail and return it to use in StockDetailViewModel/StockDetailPage
-
-//Service for getting top performing stocks
-//public async Task<List<Stock>> GetTopStocks(HttpClient httpClient, IConfiguration config)
-//{
-//    var client = new HttpClient();
-//    private string RAPIDAPIKEY = config["STOCK_API:KEY"];
-//    private string RAPIDAPIHOST = config["STOCK_API:HOST"];
-//    var request = new HttpRequestMessage
-//    {
-//        Method = HttpMethod.Get,
-//        RequestUri = new Uri("https://yh-finance.p.rapidapi.com/stock/v2/get-movers?region=US&lang=en-US"),
-//        Headers =
-//                    {
-//                        { "X-RapidAPI-Key", RAPIDAPIKEY },
-//                        { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
-//                    },
-//    };
-//    using (var response = await client.SendAsync(request))
-//    {
-//        response.EnsureSuccessStatusCode();
-//        var body = await response.Content.ReadAsStringAsync();
-//        Console.WriteLine(body);
-
-//        //use body to fill Stock models and return it here to list in view
-//        top_stocks = new List<Stock>();
-//        return top_stocks;
-//    }
-//}
-
-//Service for getting watchlist stocks
-//public async Task<Stock> GetWatchlistStocks()
-//{
-//    var client = new HttpClient();
-//    var request = new HttpRequestMessage
-//    {
-//        Method = HttpMethod.Get,
-//        RequestUri = new Uri("https://yh-finance.p.rapidapi.com/stock/v2/get-movers?region=US&lang=en-US"),
-//        Headers =
-//            {
-//                { "X-RapidAPI-Key", RAPIDAPIKEY },
-//                { "X-RapidAPI-Host", "yh-finance.p.rapidapi.com" },
-//            },
-//    };
-//    using (var response = await client.SendAsync(request))
-//    {
-//        response.EnsureSuccessStatusCode();
-//        var body = await response.Content.ReadAsStringAsync();
-//        Console.WriteLine(body);
-//        
-
-
-
-
 
