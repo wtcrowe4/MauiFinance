@@ -10,6 +10,9 @@ namespace MauiFinance.ViewModels
         {
             Title = "Watchlist";
             Stocks = new ObservableCollection<Stock>();
+
+            //Command to add stock to list
+
         }
 
         public ObservableCollection<Stock> Stocks { get; private set; }

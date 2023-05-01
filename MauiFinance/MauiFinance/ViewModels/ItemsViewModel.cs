@@ -70,7 +70,7 @@ namespace MauiFinance.ViewModels
 
         async void OnAddItem(object obj)
         {
-            await Navigation.NavigateToAsync<NewItemViewModel>(null);
+            await Navigation.NavigateToAsync<NewStockViewModel>(null);
         }
 
         async void OnItemSelected(Item item)

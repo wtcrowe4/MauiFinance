@@ -75,6 +75,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\NewStockPage.xaml.cs">
+	    <DependentUpon>NewStockPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\StockDetailPage.xaml.cs">
 	    <DependentUpon>StockDetailPage.xaml</DependentUpon>
 	  </Compile>
