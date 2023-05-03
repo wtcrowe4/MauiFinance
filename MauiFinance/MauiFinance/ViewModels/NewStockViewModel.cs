@@ -3,15 +3,19 @@ using MauiFinance.Models;
 
 namespace MauiFinance.ViewModels
 {
-    public class NewItemViewModel : BaseViewModel
+    public class NewStockViewModel : BaseViewModel
     {
-        public const string ViewName = "NewItemPage";
+        public const string ViewName = "NewStockPage";
 
 
-        string text;
-        string description;
+        string name;
+        string symbol;
+        string sector;
+        string industry;
+        string founded;
 
-        public NewItemViewModel()
+
+        public NewStockViewModel()
         {
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
@@ -19,17 +23,17 @@ namespace MauiFinance.ViewModels
                 (_, __) => SaveCommand.ChangeCanExecute();
         }
 
-        public string Text
-        {
-            get => this.text;
-            set => SetProperty(ref this.text, value);
-        }
+        //public string Text
+        //{
+        //    get => this.text;
+        //    set => SetProperty(ref this.text, value);
+        //}
 
-        public string Description
-        {
-            get => this.description;
-            set => SetProperty(ref this.description, value);
-        }
+        //public string Description
+        //{
+        //    get => this.description;
+        //    set => SetProperty(ref this.description, value);
+        //}
 
 
         [DataFormDisplayOptions(IsVisible = false)]
