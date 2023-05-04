@@ -22,8 +22,10 @@
                         <Setter Property="PlaceholderColor" Value="#acacac"/>
                     </Style>
                 </dxdf:DataFormView.Resources>
-                <dxdf:DataFormTextItem InplaceLabelText="Text" FieldName="Text" IsLabelVisible="False" />
-                <dxdf:DataFormTextItem InplaceLabelText="Description" FieldName="Description" IsLabelVisible="False"/>
+                <dxdf:DataFormTextItem InplaceLabelText="Search" FieldName="Search" IsLabelVisible="True" />
+                <!--<dxdf:DataFormButton Text="Search" Command="SearchCommand" HorizontalOptions="Center" Style="{StaticResource PrimaryButton}" Margin="0,0,0,15" />-->
+                <dxdf:DataFormTextItem InplaceLabelText="Name" FieldName="Name" IsLabelVisible="False" />
+                <dxdf:DataFormTextItem InplaceLabelText="Symbol" FieldName="Symbol" IsLabelVisible="False"/>
             </dxdf:DataFormView>
             <StackLayout Orientation="Horizontal" Spacing="15" Margin="15,0,15,0">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" Style="{StaticResource PrimaryButton}" Margin="0,0,7,0"/>

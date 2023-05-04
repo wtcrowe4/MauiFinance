@@ -35,6 +35,16 @@ namespace MauiFinance.ViewModels
         //    set => SetProperty(ref this.description, value);
         //}
 
+        public string Name
+        {
+            get => this.name; set => this.name = value;
+        }
+
+        public string Symbol
+        {
+            get => this.symbol; set => this.symbol = value;
+        }
+
 
         [DataFormDisplayOptions(IsVisible = false)]
         public Command SaveCommand { get; }
@@ -69,5 +79,7 @@ namespace MauiFinance.ViewModels
             // This will pop the current page off the navigation stack
             await Navigation.GoBackAsync();
         }
+
+        //Search Command
     }
 }
