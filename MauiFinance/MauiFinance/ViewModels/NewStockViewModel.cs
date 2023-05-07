@@ -81,5 +81,22 @@ namespace MauiFinance.ViewModels
         }
 
         //Search Command
+        public Command SearchCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var stock = await App.StockManager.GetStockAsync(this.symbol);
+                    if (stock != null)
+                    {
+                        this.name = stock.Name;
+                        this.sector = stock.Sector;
+                        this.industry = stock.Industry;
+                        this.founded = stock.Founded;
+                    }
+                });
+            }
+        }   
     }
 }
