@@ -55,8 +55,8 @@ namespace MauiFinance.ViewModels
 
         bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(this.text)
-                && !String.IsNullOrWhiteSpace(this.description);
+            return !String.IsNullOrWhiteSpace(this.name)
+                && !String.IsNullOrWhiteSpace(this.symbol);
         }
 
         async void OnCancel()
@@ -70,8 +70,11 @@ namespace MauiFinance.ViewModels
             Item newItem = new Item()
             {
                 Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
+                //Text = Text,
+                //Description = Description
+                Name = Name,
+                Symbol = Symbol,
+        
             };
 
             //await DataStore.AddItemAsync(newItem);
